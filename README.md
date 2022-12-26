@@ -24,4 +24,5 @@ Reed switch setup. Be careful to check that when the chain moves the magnet and 
 
 ## Other firmware
 
-[MQTT Light for Home Assistant](https://github.com/thedanbob/mqtt_light)
+[MQTT Light](https://github.com/thedanbob/mqtt_light) \
+[MQTT Power Cycler](https://github.com/thedanbob/mqtt_power_cycle)
