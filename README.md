@@ -16,10 +16,10 @@ You can also add `upload_port = 192.168.1.3` to platformio.ini instead of using 
 * Connect a normally-open reed switch to SW and L(-). Make sure the switch is rated for the power supply voltage (most are).
 * Splice wires from O and I to the existing wall opener wires.
 
-Example wiring. The Shelly and two wall openers are tied together with wire nuts and connected to the motor.
+Example wiring. The Shelly and two wall openers are tied together with wire nuts and connected to the motor. \
 ![Closeup of Shelly wiring](doc/opener1.jpg)
 
-Reed switch setup. Be careful to check that when the chain moves the magnet and its zip ties won't hit anything.
+Reed switch setup. Be careful to check that when the chain moves the magnet and its zip ties won't hit anything. \
 ![Closeup of reed switch](doc/opener2.jpg)
 
 ## Other firmware
