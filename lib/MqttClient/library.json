@@ -1,0 +1,7 @@
+{
+  "build": {
+    "flags": [
+      "-I../../include"
+    ]
+  }
+}
