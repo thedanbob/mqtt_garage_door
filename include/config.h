@@ -1,5 +1,6 @@
 #ifndef CONFIG_H
 #define CONFIG_H
+
 /*
   ====================================================================================================
                         Define constants below or, preferably, in platformio.ini
@@ -33,7 +34,7 @@
 
 #include <Arduino.h>
 
-// Defaults
+/* ==== Wifi Config ==== */
 #ifndef WIFI_SSID
   #define WIFI_SSID "wifi_ssid"
 #endif
@@ -44,6 +45,8 @@
   #define WIFI_TIMEOUT 10
 #endif
 
+
+/* ==== MQTT config ==== */
 #ifndef MQTT_SERVER
   #define MQTT_SERVER "192.168.0.1"
 #endif
@@ -66,37 +69,7 @@
   #define MQTT_QOS 0
 #endif
 
-#ifndef NAME
-  #define NAME "Garage Door"
-#endif
-#ifndef DEVICE_CLASS
-  #define DEVICE_CLASS "garage"
-#endif
-#ifndef DOOR_MOVE_TIME
-  #define DOOR_MOVE_TIME 18
-#endif
-#ifndef PULSE_MS
-  #define PULSE_MS 300
-#endif
-
-// Hardware constants
-#define RELAY 4
-#define SENSOR 5
-
-#ifndef DEVICE_MODEL
-  #define DEVICE_MODEL "Shelly 1"
-#endif
-
-#ifndef DEVICE_NAME
-  #define DEVICE_NAME DEVICE_MODEL
-#endif
-
 // Home Assistant defaults
-#define MQTT_CMD_SUF "/cmd"
-#define MQTT_STATE_SUF "/stat"
-#define MQTT_ATTR_SUF "/sys"
-#define MQTT_AVTY_SUF "/up"
-
 #ifndef MQTT_CMD_OPEN
   #define MQTT_CMD_OPEN "OPEN"
   #define MQTT_CMD_OPEN_DEFAULT
@@ -130,15 +103,52 @@
   #define MQTT_MSG_DOWN_DEFAULT
 #endif
 
+// Not used by Home Assistant
 #ifndef MQTT_MSG_RESTART
   #define MQTT_MSG_RESTART "restart"
 #endif
 
+// Other MQTT constants
+#define MQTT_CMD_SUF "/cmd"
+#define MQTT_STATE_SUF "/stat"
+#define MQTT_ATTR_SUF "/sys"
+#define MQTT_AVTY_SUF "/up"
+
+
+/* ==== Device config ==== */
+#ifndef NAME
+  #define NAME "Garage Door"
+#endif
+#ifndef DEVICE_CLASS
+  #define DEVICE_CLASS "garage"
+#endif
+#ifndef DEVICE_MODEL
+  #define DEVICE_MODEL "Shelly 1"
+#endif
+#ifndef DEVICE_NAME
+  #define DEVICE_NAME DEVICE_MODEL
+#endif
+#ifndef DOOR_MOVE_TIME
+  #define DOOR_MOVE_TIME 18
+#endif
+#ifndef PULSE_MS
+  #define PULSE_MS 300
+#endif
+
+
+/* ==== Hardware constants ==== */
+#define RELAY 4
+#define SENSOR 5
+
+
+/* ==== Other ==== */
 #ifndef VERSION
   #define VERSION "20220412000000"
 #endif
 
-// Debug helpers
+#define STR_HELPER(x) #x
+#define STR(x) STR_HELPER(x)
+
 #ifdef DEBUG
   #define LOG_BEGIN(x) Serial.begin(x)
   #define LOG(x) Serial.print(x)
@@ -150,9 +160,5 @@
   #define LOG_LN(x)
   #define LOG_F(x, ...)
 #endif
-
-// String helpers
-#define STR_HELPER(x) #x
-#define STR(x) STR_HELPER(x)
 
 #endif

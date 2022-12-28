@@ -22,6 +22,10 @@ Example wiring. The Shelly and two wall openers are tied together with wire nuts
 Reed switch setup. Be careful to check that when the chain moves the magnet and its zip ties won't hit anything. \
 ![Closeup of reed switch](doc/opener2.jpg)
 
+## Remote reboot
+
+You can reboot the devices via MQTT by sending a message (default: `restart`) manually to the device's command topic (default: `<base topic>/cmd`). Home Assistant provides a way to publish arbitrary messages in Settings > Devices & Services > (MQTT Integration) Configure.
+
 ## Other firmware
 
 [MQTT Light](https://github.com/thedanbob/mqtt_light) \
